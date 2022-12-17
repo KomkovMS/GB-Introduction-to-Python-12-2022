@@ -20,3 +20,12 @@ while n >= m:
 
 for i in range(-n, n+1):
     print(i)
+
+# Вариант 3 (на семинаре от преподавателя)
+
+my_list = []
+
+for i in range(-n, n+1):
+    my_list.append(i)
+
+print(*my_list, sep=', ')
