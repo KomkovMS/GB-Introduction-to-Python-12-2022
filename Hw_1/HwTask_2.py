@@ -14,3 +14,38 @@ z = my_list[2]
 value_1 = not (x or y or z)
 value_2 = (not x) and (not y) and (not z)
 print(value_1 == value_2)
+
+# другое решение от ученика
+
+for i in range(2):
+    x = i
+    for j in range(2):
+        y = j
+        for k in range(2):
+            z = k
+            bool = not (x or y or z) == ((not x) and (not y) and (not z))
+            print(f'{x, y, z} - {bool}')
+
+# решение преподавателя на семинаре
+print('x' * 20)
+
+flag = True
+for x in [True, False]:
+    for y in [True, False]:
+        for z in [True, False]:
+            if not (x or y or z) != ((not x) and (not y) and (not z)):
+                print('Условие не выполнено')
+                flag = False
+if flag:
+    print('Выражение при любом значении верно')
+
+# решение преподавателя на семинаре 2
+
+print('x' * 20)
+
+flag = True
+for x in [True, False]:  # можно было поставить range(2) или кортеж (0,1)
+    for y in [True, False]:
+        for z in [True, False]:
+            expression = not (x or y or z) == ((not x) and (not y) and (not z))
+            print(x, y, z, expression)
