@@ -14,3 +14,19 @@ elif quarter_number == 4:
     print(f'Для четверти: {quarter_number} x > 0, y < 0')
 else:
     print(f'{quarter_number} - такой четверти не существует')
+
+# разбор решения на семинаре от преподавателя
+
+choice = int(input('Введите номер четверти: '))
+
+match choice:
+    case 1:
+        print(f'Для четверти: {quarter_number} x > 0, y > 0')
+    case 2:
+        print(f'Для четверти: {quarter_number} x < 0, y > 0')
+    case 3:
+        print(f'Для четверти: {quarter_number} x < 0, y < 0')
+    case 4:
+        print(f'Для четверти: {quarter_number} x > 0, y < 0')
+    case _:
+        print(f'{quarter_number} - такой четверти не существует')
