@@ -86,7 +86,7 @@ def check(my_list: list, search: str):
         print('Второго вхождения нет')
 
 
-check(list_1, "qwe")
+print(list_1.index('qwe', 2))  # аналогично check(list_1, 'qwe')
 check(list_2, "йцу")
 check(list_3, "йцу")
 check(list_1, "123")
