@@ -17,3 +17,16 @@ while i <= number:
     if i % 2 == 0:
         print(i, end=', ')
     i += 1
+
+print('\n' + '>>>>>>>' * 20)
+# или
+
+i = 0
+number = int(input('Введите число: '))
+
+while i <= number:
+    if i % 2 != 0:
+        i += 1
+        continue
+    print(i, end=', ')
+    i += 1
