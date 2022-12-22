@@ -7,4 +7,4 @@ while index <= n:
     print(index, end=', ')
     index += 1
 
-print('\n' + '>>>>>>>' * 20)
+print('\n' + '>>>>>>>' * 10)
