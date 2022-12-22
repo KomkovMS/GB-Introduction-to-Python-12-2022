@@ -1,6 +1,6 @@
 # Вывести четные числа от 0 до n
 
-idx = 2
+idx = 0
 num = int(input('Введите число: '))
 
 while idx <= num:
@@ -14,6 +14,6 @@ i = 0
 number = int(input('Введите число: '))
 
 while i <= number:
-    if i % 2 == 0 and i != 0:
+    if i % 2 == 0:
         print(i, end=', ')
     i += 1
