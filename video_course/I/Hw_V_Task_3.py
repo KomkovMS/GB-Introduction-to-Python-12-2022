@@ -22,7 +22,7 @@ weight_inp = int(input('Введите ваш вес: '))
 
 if age_inp < 30 and 50 < weight_inp < 120:
     print(f'Пациент {name_inp} {surname_inp} в хорошем состоянии')
-elif age_inp > 30 and < 40 and weight_inp < 50 or weight_inp > 120:
+elif age_inp > 30 and age_inp < 40 and weight_inp < 50 or weight_inp > 120:
     print(f'Пациенту {name_inp} {surname_inp} требуется заняться собой')
 elif age_inp > 40 and weight_inp < 50 or weight_inp > 120:
     print(f'Пациенту {name_inp} {surname_inp} требуется врачебный осмотр')
