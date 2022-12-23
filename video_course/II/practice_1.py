@@ -1,6 +1,8 @@
 
 #         0123456789101112
-frinds = 'Максим Леонид'
+frinds = 'Максим Леонид'        # False
+
+print('Я' in frinds)
 
 print(len(frinds))  # 13
 print(frinds.find('Лео'))  # 7
@@ -31,3 +33,34 @@ my_str = 'Леона́рдо Пиза́нский — первый крупны�
 
 print(len(my_str))
 print(my_str.find('первый'))
+
+
+friends = ['Max', 'Leo', 'Kate']
+friends.append('Ron')
+print(friends)  # ['Max', 'Leo', 'Kate', 'Ron']
+
+friends.pop()
+print(friends)  # ['Max', 'Leo', 'Kate']
+
+friends.clear()
+print(friends)  # []
+
+friends = ['Max', 'Leo', 'Kate']
+friends.remove('Kate')
+print(friends)  # ['Max', 'Leo']
+
+friends = ['Max', 'Leo']
+del friends[0]
+print(friends)  # ['Leo']
+
+
+hero = 'Superman'
+if hero.find('man') != -1:
+    print(f'В слове {hero} есть слово man')  # В слове Superman есть слово man
+if 'man' in hero:
+    print(f'В слове {hero} есть слово man')  # В слове Superman есть слово man
+
+
+goals = ['стать гуру языка python', 'здоровье', 'накормить кота']
+if 'здоровье' in goals:
+    print('Все хорошо')  # Все хорошо
