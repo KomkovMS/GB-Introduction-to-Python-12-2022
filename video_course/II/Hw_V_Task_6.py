@@ -17,3 +17,12 @@ for i in range(len(my_list_1)):
     if my_list_1.count(my_list_1[i]) < 2:
         unic.append(my_list_1[i])
 print(unic)
+
+# решение на разборе ДЗ
+
+numbers = [2, 2, 5, 12, 8, 2, 12]
+result = []
+for number in numbers:
+    if numbers.count(number) == 1:
+        result.append(number)
+print(result)

@@ -41,3 +41,27 @@ year = date_input[6:10]
 if day in list_day:
     if month in list_month:
         print(f'{list_day[day]} {list_month[month]} {year} года')
+
+
+# другое решение на разборе ДЗ
+
+date = '02.11.2013'
+d, m, y = date.split('.')
+print(d, m, y)
+
+months = {
+    '01': 'января',
+    '02': 'февраля',
+    '03': 'марта',
+    '11': 'ноября'
+}
+
+days = {
+    '01': 'первое',
+    '02': 'второе',
+    '03': 'третье',
+    '04': 'четвертое'
+}
+
+result = f'{days[d]} {months[m]} {y} года.'
+print(result)

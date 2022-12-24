@@ -3,10 +3,19 @@
 
 # Примечание. Списки создайте вручную, например так:
 
-# my_list_1 = [2, 5, 8, 2, 12, 12, 4]
+# my_list_1 = [2, 2, 2, 5, 5, 5, 8, 2, 12, 12, 4]
 # my_list_2 = [2, 7, 12, 3]
 
-my_list_1 = [2, 5, 8, 2, 12, 12, 4]
+# не полное решение
+
+my_list_1 = [2, 2, 2, 5, 5, 5, 8, 2, 12, 12, 4]
 my_list_2 = [2, 7, 12, 3]
 result = set(my_list_1) - set(my_list_2)
-print(list(result))
+print(list(result))         # [8, 4, 5]
+
+# правильное решение
+for number in my_list_1[:]:  # срезом мы сделали копию списка
+    if number in my_list_2:
+        my_list_1.remove(number)
+
+print(my_list_1)            # 5, 5, 5, 8, 4]
