@@ -25,20 +25,29 @@
 # 42
 # =`
 
-# Шаг 1. Загадать случайное число
+# мое решение
+
 import random
 
+print('Загадайте и запомните число от 1 до 100')
 
-while True:
-    number = random.randint(1, 101)
-    print(number)
-    question = input(f'Вы загадали число {number}? ')
-    if question == '>':
-        number = random.randint(x, 101)
-        print('загаданное число больше')
-    elif question == '<':
-        number = random.randint(1, x)
+temp = 0
+min_PC = 1
+max_PC = 100
+
+number_PC = random.randrange(min_PC, max_PC)
+
+while temp != '=':
+    temp = input(
+        f'Вы загадали число {number_PC}? ')
+    if temp == '<':
         print('загаданное число меньше')
-    else:
-        print('Победа!')
-        break
+        max_PC = number_PC
+        number_PC = random.randrange(min_PC, max_PC)
+    elif temp == '>':
+        print('загаданное число больше')
+        min_PC = number_PC
+        number_PC = random.randrange(min_PC, max_PC)
+
+else:
+    print("Победа!")
