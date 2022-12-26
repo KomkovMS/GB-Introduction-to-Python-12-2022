@@ -12,6 +12,8 @@
 # НЕОБЯЗАТЕЛЬНОЕ, ДОПОЛНИТЕЛЬНОЕ ЗАДАНИЕ:
 # Расширить значение коэффициентов до [-100..100]
 
+# polynomial
+
 # Пояснение к ДЗ
 # 1 - функция генерирует многочлен по максимальной степени
 # 2 - функция делает из словаря строку
@@ -24,7 +26,7 @@ import random
 
 
 def create_equation() -> dict:
-    k = int(input('Введите максимальную степень: '))  # degree (степень)
+    k = int(input('Введите максимальную степень: '))
     equation = {}
     for n in range(k, -1, -1):
         equation[n] = random.randint(-100, 100)
@@ -82,18 +84,15 @@ if __name__ == '__main__':
     str_eq1 = decode(equation1)
     str_eq2 = decode(equation2)
     print(str_eq1)
+    data = open('polynomial_1.txt', 'w')
+    data.writelines(str_eq1)
     print(str_eq2)
+    data = open('polynomial_2.txt', 'w')
+    data.writelines(str_eq2)
     dict_eq1 = encode(str_eq1)
     dict_eq2 = encode(str_eq2)
     dict_final = addition(dict_eq1, dict_eq2)
     str_final = decode(dict_final)
     print(str_final)
-
-    # print(equation1)
-
-    # print(decode(equation1))
-    # print(equation2)
-
-    # print(decode(equation2))
-    # print(addition(equation1, equation2))
-    # print(decode(addition(equation1, equation2)))
+    data = open('str_final.txt', 'w')
+    data.writelines(str_final)
