@@ -18,3 +18,24 @@ for i in range(len(my_list)):
         res += int(my_list[i])
 
 print(f'{num} -> {res}')
+
+
+# Разбор ДЗ на семинаре 4
+
+number = '0.94'
+summa = 0
+for char in number:
+    if char != '.' and char != ',' and char != '-':
+        summa += int(char)
+
+print(summa)
+
+# оптимальное решение
+
+number = '0.94'
+summa = 0
+for char in number:
+    if char.isdigit():
+        summa += int(char)
+
+print(summa)
