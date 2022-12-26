@@ -45,3 +45,12 @@ else:
 print(eq_str)
 # 25*x**9 + 5*x**8 + 14*x**7 + 81*x**6 + 62*x**5 + 97*x**4 + 2*x**3 + 24*x**2 + 79*x**1 + 21*x**0 - \
 # - нужно написать без 79*x**1 + 21*x**0
+
+res_equ = {}
+equation1 = {4: 3}
+res_equ.update(equation1)
+equation2 = {4: 12}
+res_equ.update(equation2)
+for key in res_equ:
+    res_equ = equation1.get(key, 0) + equation2.get(key, 0)
+print(res_equ)
