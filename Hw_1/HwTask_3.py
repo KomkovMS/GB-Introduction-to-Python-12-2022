@@ -40,3 +40,32 @@ elif x < 0 and y < 0:
     print('Третья четверть')
 elif x > 0 and y < 0:
     print('Четвертая четверть')
+
+# решение на стриме дек 2022
+
+
+def input_float():
+    while True:
+        try:
+            coords = input('Введите координаты через пробел: ')
+            coords = list(map(float, coords.split()))
+            if len(coords) == 2:
+                return coords
+            else:
+                print('Введите только две координаты')
+        except:
+            print('ОШИБКА! Введите веществнное число')
+
+
+x, y = input_float()
+
+if x > 0 and y > 0:
+    print('Первая четверть')
+elif x < 0 and y > 0:
+    print('Вторая четверть')
+elif x < 0 and y < 0:
+    print('Третья четверть')
+elif x > 0 and y < 0:
+    print('Четвертая четверть')
+else:
+    print('Одна из точек лежит на оси')
