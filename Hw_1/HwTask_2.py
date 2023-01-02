@@ -49,3 +49,31 @@ for x in [True, False]:  # можно было поставить range(2) ил�
         for z in [True, False]:
             expression = not (x or y or z) == ((not x) and (not y) and (not z))
             print(x, y, z, expression)
+
+
+# решение на стриме дек 2022
+
+flag = True
+
+for x in [True, False]:
+    for y in [True, False]:
+        for z in [True, False]:
+            expression = not (x or y or z) == (not x and not y and not z)
+            print(f'{x=} {y=} {z=} -> {expression}')
+            if not expression:
+                flag = False
+
+if flag:
+    print('Выражение всегда верно')
+else:
+    print('Выражение не всегда верно')
+
+# x y z
+# t t t
+# t t f
+# t f t
+# t f f
+# f t t
+# f t f
+# f f t
+# f f f
