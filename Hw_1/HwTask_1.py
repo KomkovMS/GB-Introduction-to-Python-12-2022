@@ -37,3 +37,24 @@ if 0 < day < 8:
         print('Будни')
 else:
     print('ты что то не то ввел')
+
+
+# решение на стриме дек 2022
+def input_int():
+    while True:
+        try:  # попробуй ввести число...
+            number = int(input('Введите целое число: '))
+            return number
+        except:
+            print('ОШИБКА! Введите целое число')
+
+
+day = input_int()
+
+if 0 < day < 8:
+    if day < 6:
+        print('будни')
+    else:
+        print('выходные')
+else:
+    print('Соррян, но ты что-то не то ввел')
