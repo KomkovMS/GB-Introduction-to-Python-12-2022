@@ -30,3 +30,30 @@ match choice:
         print(f'Для четверти: {quarter_number} x > 0, y < 0')
     case _:
         print(f'{quarter_number} - такой четверти не существует')
+
+# решение на стриме дек 2022
+
+
+def input_int():
+    while True:
+        try:
+            number = int(input('Введите номер четверти: '))
+            if 0 < number < 5:
+                return number
+            else:
+                print('Такой четверти нет, попробуйте еще раз')
+        except:
+            print('ОШИБКА! Введите целое число')
+
+
+match input_int():
+    case 1:
+        print(f'1 четветь x > 0, y > 0')
+    case 2:
+        print(f'2 четветь x < 0, y > 0')
+    case 3:
+        print(f'3 четветь x < 0, y < 0')
+    case 4:
+        print(f'4 четветь x > 0, y < 0')
+    case _:
+        print(f'такой четверти не существует')
