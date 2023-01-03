@@ -46,9 +46,14 @@ print(*my_list, sep=', ')
 print(f'И его сумма -> {sum(my_list)}')
 
 
-# num if num != int(num) else int(num) тоже самое что,
+# решение на стриме дек 2022
 
-# if num != int(num):
-#     num = num
-# else:
-#     num = int(num)
+n = int(input('Введите целое число: '))
+
+my_list = []
+
+for i in range(1, n + 1):
+    my_list.append(round((1+1/i)**i, 2))
+
+print(f'При n= {n} список будет {my_list},')
+print(f'а его сумма {sum(my_list)}')
