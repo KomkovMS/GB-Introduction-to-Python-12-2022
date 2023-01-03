@@ -1,8 +1,8 @@
-# Реализуйте алгоритм перемешивания списка.
-# НЕ ИСПОЛЬЗОВАТЬ ВСТРОЕННЫЕ БИБЛИОТЕКИ SHUFFLE,
-# максимум использование библиотеки Random для получения случайного int
+# # Реализуйте алгоритм перемешивания списка.
+# # НЕ ИСПОЛЬЗОВАТЬ ВСТРОЕННЫЕ БИБЛИОТЕКИ SHUFFLE,
+# # максимум использование библиотеки Random для получения случайного int
 
-import random
+from random import randint as RI
 
 my_list = []
 for i in range(10):
@@ -66,3 +66,39 @@ def my_shuffle(my_list: list):
 
 print(my_list)
 print(my_shuffle(my_list))
+
+
+# решение на стриме дек 2022
+
+# вариант 1
+
+list_ = [i for i in range(10)]
+print(list_)
+
+
+def my_shuffle(my_list: list):
+    new_list = []
+    while len(my_list) > 0:
+        ni = RI(0, len(my_list) - 1)
+        new_list.append(my_list.pop(ni))
+
+    return new_list
+
+
+print(my_shuffle(list_))
+
+# вариант 2
+
+my_list_ = [i for i in range(10)]
+print(my_list_)
+
+
+def my_shuffle(new_list: list):
+    for i in range(len(new_list)):
+        ni = RI(0, len(new_list) - 1)
+        new_list[i], new_list[ni] = new_list[ni], new_list[i]
+
+    return new_list
+
+
+print(my_shuffle(my_list_))
