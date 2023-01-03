@@ -32,10 +32,50 @@ print(summa)
 
 # оптимальное решение
 
-number = '0.94'
+number = input('Введите вещественное число: ')
 summa = 0
 for char in number:
     if char.isdigit():
         summa += int(char)
 
 print(summa)
+
+
+# решение на стриме дек 2022
+
+# 1 вариант
+
+number = input('Введите вещественное число: ')
+# print(number)
+# print(type(number))
+number = number.split('.')
+print(number)
+# print(type(number))
+
+summa = 0
+
+for element in number:
+    for dig in element:
+        summa += int(dig)
+print(summa)
+
+# 2 вариант
+num = input('Введите вещественное число: ')
+num = num.replace('.', '').replace('-', '').replace(',', '')
+print(num)
+
+summ = 0
+
+for element in num:
+    summ += int(element)
+print(summ)
+
+# 3 вариант (оптимальный)
+num = input('Введите вещественное число: ')
+
+sum = 0
+
+for element in num:
+    if element.isdigit():
+        sum += int(element)
+print(sum)
