@@ -3,6 +3,7 @@
 # Пример:
 # [2, 3, 4, 5, 6] => [12, 15, 16];
 # [2, 3, 5, 6] => [12, 15]
+from random import randint as RI
 
 
 def mult_numbers(my_list: list) -> list:
@@ -20,4 +21,20 @@ def mult_numbers(my_list: list) -> list:
 
 
 my_list = [2, 3, 4, 5, 6]
-print(mult_numbers(my_list))
+print(f'{my_list} -> {mult_numbers(my_list)}')
+
+
+# решение на стриме дек 2022
+
+list_ = [RI(1, 10) for i in range(9)]
+print(list_)
+
+new_list = []
+
+for i in range(len(list_)//2):
+    new_list.append(list_[i] * list_[- i - 1])
+
+if len(list_) % 2 != 0:
+    new_list.append(list_[len(list_) // 2] ** 2)
+
+print(new_list)
