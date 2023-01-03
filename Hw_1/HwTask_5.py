@@ -41,3 +41,26 @@ distance = (float(first[0]) - float(second[0])) ** 2 + \
     (float(first[1])) - float(second[1]) ** 2
 
 print(f'расстояние между точками равно {(round(math.sqrt(distance)), 2)}')
+
+
+# решение на стриме дек 2022
+def input_coords():
+    try:
+        coords = input(
+            'Введите координаты точек A(x y), B(x y) через пробел и запятую: ')
+        coords = coords.split(',')
+        new_coords = []
+        for item in coords:
+            new_coords.append(tuple(map(float, item.split())))
+        return new_coords
+    except:
+        print('Введите по шаблону A(x y), B(x y)')
+
+
+a, b = input_coords()
+# print(a)
+# print(b)
+
+distance = (b[0] - a[0])**2 + (b[1] - a[1])**2
+print(
+    f'Расстояние между точками {a=} и {b=} будет {round(math.sqrt(distance), 2)}')
