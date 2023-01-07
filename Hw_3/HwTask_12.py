@@ -24,3 +24,19 @@ def get_binary_number(inp_num: int) -> int:
 
 inp_num = int(input('Enter number: '))
 print(f'{inp_num} -> {get_binary_number(inp_num)}')
+
+
+# решение на стриме дек 2022
+def get_bi_num(num: int) -> str:
+    bi_num = ''
+    while num > 0:
+        bi_num = str(num % 2) + bi_num
+        num //= 2
+
+    return bi_num
+
+
+number = int(input('Введите целое число: '))
+bi_number = get_bi_num(number)
+
+print(f'{number} -> {bi_number}')
