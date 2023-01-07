@@ -22,3 +22,14 @@ fib_res = f_fib(k, list_fib)
 
 print(f'для k={k} список будет выглядеть так: \n'
       f'{fib_res}')
+
+
+# решение на стриме дек 2022
+
+fibo = [1, 0, 1]
+
+for i in range(int(input('Введите предел последовательности: '))):
+    fibo.insert(0, fibo[1] - fibo[0])
+    fibo.append(fibo[-2] + fibo[-1])
+
+print(fibo)
