@@ -25,6 +25,8 @@ from random import randint as RI
 def get_random_number_list() -> list:
     my_list = [RI(1000, 10000) for _ in range(10)]
     print(my_list)
+    # можно было так в 1 строку: list_ = list(map(str, list_))
+    # или сразу my_list = [str(RI(1000, 10000)) for _ in range(10)]
     for i in range(len(my_list)):
         my_list[i] = str(my_list[i])
     return my_list
