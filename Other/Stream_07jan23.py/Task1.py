@@ -1,5 +1,6 @@
 from string import ascii_letters
 import random
+from random import choice
 
 # решение на стриме 07.01.2023
 
@@ -28,3 +29,26 @@ while len(string) > 0:
     string = string[3:]  # Div...ide... th...e l...ine...
 
 print(new_list)
+
+# варинт 2
+
+alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
+alphabet += alphabet.upper()
+
+s = 'Div213234ide the 567546line into fragmei8it6785678nts of' \
+    'thresdgw456235e in a row of walking symbols. asdege768rg'  \
+    'regsdrg r745gterg e4568r 9e9 rgf456747ae457568t45hhx ttwet' \
+    'ertyeryt6tert a234523465gergh.'
+
+
+def replacer(frag: str) -> str:
+    while True:
+        lt = choice(alphabet)
+        if lt not in frag and len(frag) > 2:
+            return frag[0] + lt + frag[2]
+
+        if len(frag) <= 2:
+            return frag
+
+
+print(list(map(replacer, [s[i:i+3] for i in range(0, len(s), 3)])))
