@@ -75,5 +75,5 @@ for item in sum_num:
 print(sum_num)
 
 # 4 этап
-sum_num = set(sum_num)
+sum_num = list(set(sum_num))
 print(sum_num)
