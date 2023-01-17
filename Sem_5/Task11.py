@@ -17,6 +17,10 @@ new_list = []
 #         new_list.append(word)
 # print(' '.join(new_list))   # Питон - лучший из языков
 
-# или
+# или через filter()
 new_list = list(filter(lambda word: not 'абв' in word, my_str.split()))
 print(' '.join(new_list))  # Питон - лучший из языков
+
+# или через List Comprehension()
+new_list2 = [x for x in my_str.split() if not 'абв' in x]
+print(' '.join(new_list2))  # Питон - лучший из языков
