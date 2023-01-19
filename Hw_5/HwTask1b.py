@@ -1,6 +1,7 @@
 '''
 1. Создайте программу для игры с конфетами человек против человека.
 a) Добавьте игру против бота
+b) Подумайте как наделить бота 'интеллектом'
 
 '''
 from random import randint as RI
@@ -84,8 +85,9 @@ while not is_winner:
         print(f'ход пользователя >>> {user}')
         while True:
             if user == 'Бот Ботыч':
-                user_number = RI(1, 28)
-                if user_number > res:
+                if user_number <= 28 or user_number > 28:
+                    user_number = RI(1, 28)
+                elif user_number > res:
                     user_number = RI(1, res)
                 print(f'Я забрал со стола {user_number} конфет (-у)(-ы)')
             else:
