@@ -9,23 +9,26 @@ from random import choice
 
 # человек против бота:
 print('*' * 45)
-print('\n     ПРИВЕТСТВУЕМ ВАС В ИГРЕ "КОНФЕТЫ!\n')
+print('\n  ПРИВЕТСТВУЕМ ВАС В ИГРЕ "К О Н Ф Е Т Ы!\n')
 print('*' * 45)
 ######################################################################
 
 
-def input_candy():
+def input_candy(msg):
     while True:
         try:
             number = abs(
-                int(input('\nСколько конфет положите на стол? ')))
+                int(input(f'\n{msg}')))
             if number > 0:
                 return number
         except:
             print('ОШИБКА! Введите целое число')
 
 
-candy = input_candy()
+msg_1 = 'Сколько конфет положите на стол? '
+candy = input_candy(msg_1)
+msg_2 = 'Сколько максимум конфет будем брать за один ход? '
+candy_m = input_candy(msg_2)
 
 ######################################################################
 print()
@@ -68,7 +71,7 @@ print(f'По результатам жеребьевки начинает >>> {n
 
 ######################################################################
 
-print('- за один ход можно забрать не более,\n  чем 28 конфет.\n'
+print(f'- за один ход можно забрать не более,\n  чем {candy_m} конфет.\n'
       '- все конфеты оппонента достаются сделавшему\n  последний ход.\n'
       '\nУдачи!\n')
 print('=================== START ===================\n')
@@ -85,21 +88,27 @@ while not is_winner:
         print(f'ход пользователя >>> {user}')
         while True:
             if user == 'Бот Ботыч':
-                if user_number <= 28 or user_number > 28:
-                    user_number = RI(1, 28)
-                elif user_number > res:
-                    user_number = RI(1, res)
+                user_number = res % (candy_m + 1)
+                if user_number == 0:
+                    user_number = RI(1, candy_m)
+                res = res - user_number
                 print(f'Я забрал со стола {user_number} конфет (-у)(-ы)')
             else:
-                user_number = abs(int(input('Сколько ты забираешь конфет?: ')))
-            if user_number > 28:
-                print(f'Вы не можете забрать больше 28 конфет!')
-            elif res < user_number <= 28:
-                print(f'Вы не можете забрать конфет больше,\n'
-                      'чем осталось на столе!')
-            else:
-                res = res - user_number
-                break
+                while True:
+                    user_number = abs(
+                        int(input('Сколько ты забираешь конфет?: ')))
+                    if user_number == 0:
+                        print('Вы должны забрать хотя бы 1 конфету')
+                        continue
+                    if user_number > candy_m:
+                        print(f'Вы не можете забрать больше {candy_m} конфет!')
+                    elif res < user_number <= candy_m:
+                        print(f'Вы не можете забрать конфет больше,\n'
+                              'чем осталось на столе!')
+                    else:
+                        res = res - user_number
+                        break
+            break
         if res > 0:
             print(f'На столе осталось >> {res} конфет')
         else:
