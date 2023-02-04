@@ -1,7 +1,7 @@
 
 
 phone_book = []  # 6
-path = 'Sem_7/Tel_Book/phone_book.txt'  # 7
+path = 'C:\Python\Python_12.2022\Sem_7\Tel_Book\phone_book.txt'  # 7
 
 
 def open_file():  # 8
@@ -59,7 +59,6 @@ def change_cont(change_: str):
     for contact in phone_book:
         for field in contact:
             if change_ in field:
-                phone_book.remove(change_, phone_book.append(
-                    add_new_contact(change_)))
+                phone_book.remove(contact)
                 break
     return phone_book
