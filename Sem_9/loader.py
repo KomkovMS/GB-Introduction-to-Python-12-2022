@@ -1,4 +1,5 @@
 from aiogram import Bot, Dispatcher
+import os
 
-bot = Bot('6224618510:AAGKxctKUi_ukrvQPLQpPgoiNPfBFOca_ek')
+bot = Bot(os.getenv('BOT_TOKEN'))
 dp = Dispatcher(bot)
