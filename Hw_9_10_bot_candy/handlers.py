@@ -38,6 +38,9 @@ async def mes_new_game(message: types.Message):
         await message.answer(f'Игра началась. По жребию первым ходит Ботяо')
         await bot_turn(message)
 
+@dp.message_handler(commands='my_id')
+async def mes_my_id(message: types.Message):
+    await message.answer(message.from_user.id)
 
 @dp.message_handler(commands=['duel'])
 async def mes_duel(message: types.Message):
@@ -50,15 +53,21 @@ async def mes_duel(message: types.Message):
     duel.append(int(message.from_user.id))
     duel.append(int(message.text.split()[1]))
     total = max_count
-    first = random.randint(0,1)
-    if first:
-        await dp.bot.send_message(duel[0], 'Первый ход за тобой, бери конфеты')
-        await dp.bot.send_message(duel[1], 'Первый ход за твоим противником! Жди своего хода')
+    first = random.randint(0, 1)
+    if (message.text.split()) != 1:
+        if first:
+            await dp.bot.send_message(duel[0], 'Первый ход за тобой, бери конфеты')
+            await dp.bot.send_message(duel[1], 'Первый ход за твоим противником! Жди своего хода')
+        else:
+            await dp.bot.send_message(duel[1], 'Первый ход за тобой, бери конфеты')
+            await dp.bot.send_message(duel[0], 'Первый ход за твоим противником! Жди своего хода')
+        current = duel[0] if first else duel[1]
+        new_game = True
     else:
-        await dp.bot.send_message(duel[1], 'Первый ход за тобой, бери конфеты')
-        await dp.bot.send_message(duel[0], 'Первый ход за твоим противником! Жди своего хода')
-    current = duel[0] if first else duel[1]
-    new_game = True
+        await message.answer('Для игры в режиме "дуэль" необходимо у соперника получить его id\n'
+                             'Чтобы узнать id, сопернику необходимо ввести команду /my_id\n'
+                             'Для старта игры в режиме "дуэль" Вам необходимо ввести команду:\n'
+                             '/duel "id-соперника"')
 
 
 @dp.message_handler(commands=['set'])
