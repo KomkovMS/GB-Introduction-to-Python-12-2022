@@ -50,11 +50,11 @@ async def mes_duel(message: types.Message):
     global duel
     global first
     global current
-    duel.append(int(message.from_user.id))
-    duel.append(int(message.text.split()[1]))
     total = max_count
     first = random.randint(0, 1)
-    if (message.text.split()) != 1:
+    if len(message.text.split()) != 1:
+        duel.append(int(message.from_user.id))
+        duel.append(int(message.text.split()[1]))
         if first:
             await dp.bot.send_message(duel[0], 'Первый ход за тобой, бери конфеты')
             await dp.bot.send_message(duel[1], 'Первый ход за твоим противником! Жди своего хода')
